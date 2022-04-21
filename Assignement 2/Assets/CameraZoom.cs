@@ -14,17 +14,14 @@ public class CameraZoom : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(1) && zoom > 15)
         {   
-            Debug.Log("Before" + zoom);
             isZoomed = true;
             zoom -= 15;
-            Debug.Log(zoom);
             GetComponent<Camera>().fieldOfView = Mathf.Lerp(GetComponent<Camera>().fieldOfView, zoom, Time.deltaTime * smooth);
 
         }
         if(Input.GetMouseButtonDown(0) && zoom !=60){
             isZoomed = true;
             zoom += 15;
-            Debug.Log(zoom);
             GetComponent<Camera>().fieldOfView = Mathf.Lerp(GetComponent<Camera>().fieldOfView, zoom, Time.deltaTime * smooth);
         }
         if(Input.GetMouseButtonDown(2)){
